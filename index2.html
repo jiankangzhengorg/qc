@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>食品从业人员查询结果</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0F42D2',
+                        success: '#00B42A',
+                        neutral: '#F5F7FA',
+                        dark: '#1D2129',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-neutral min-h-screen text-dark">
+    <!-- 顶部标题 -->
+    <header class="bg-primary text-white shadow-md sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fa fa-heartbeat mr-2"></i>
+                <h1 class="text-lg font-bold">北京市健康证明查询结果</h1>
+            </div>
+            <button id="menu-btn" class="text-white hover:text-gray-200">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- 主内容 -->
+    <main class="container mx-auto px-4 py-6">
+        <!-- 顶部卡片 -->
+        <div class="bg-white rounded-xl shadow-sm p-5 mb-6">
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <div class="bg-success/10 text-success inline-block px-3 py-1 rounded-full text-sm font-medium mb-2">
+                        <i class="fa fa-check-circle mr-1"></i> 健康合格
+                    </div>
+                    <h2 class="text-xl font-bold">韦汝华</h2>
+                    <p class="text-gray-500 text-sm">性别: 男 | 年龄: 23岁</p>
+                </div>
+                <div class="bg-primary/5 rounded-lg p-2 text-primary text-sm font-medium">
+                    <i class="fa fa-calendar-check-o mr-1"></i> 剩余350天
+                </div>
+            </div>
+            
+            <!-- 证件信息 -->
+            <div class="grid grid-cols-3 gap-3 text-sm mb-4">
+                <div>
+                    <p class="text-gray-500 text-xs">证件编号</p>
+                    <p class="font-medium">2025QX021983</p>
+                </div>
+                <div>
+                    <p class="text-gray-500 text-xs">体检日期</p>
+                    <p class="font-medium">2025-06-10</p>
+                </div>
+                <div>
+                    <p class="text-gray-500 text-xs">有效期至</p>
+                    <p class="font-medium">2026-06-09</p>
+                </div>
+            </div>
+            
+            <!-- 二维码 -->
+            <div class="bg-neutral rounded-lg p-4 text-center">
+                <h3 class="text-base font-semibold mb-3">电子健康证二维码</h3>
+                <img src="pt.png" alt="健康证二维码" class="w-40 h-40 mx-auto mb-2">
+                <p class="text-xs text-gray-500">扫码查看完整信息</p>
+            </div>
+        </div>
+        
+        <!-- 使用注意事项 -->
+        <div class="bg-white rounded-xl shadow-sm p-5 mb-6">
+            <h3 class="text-base font-semibold mb-4 flex items-center text-primary">
+                <i class="fa fa-exclamation-circle mr-2"></i> 健康证使用注意事项
+            </h3>
+            
+            <div class="space-y-4">
+                <div class="flex items-start">
+                    <div class="bg-primary/10 text-primary rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mt-0.5 mr-3 flex-shrink-0">1</div>
+                    <p class="text-sm text-gray-700">本健康证仅限本人使用，不得转借他人</p>
+                </div>
+                
+                <div class="flex items-start">
+                    <div class="bg-primary/10 text-primary rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mt-0.5 mr-3 flex-shrink-0">2</div>
+                    <p class="text-sm text-gray-700">根据各地政策，有效期内在本省/市使用，过期需重新办理</p>
+                </div>
+                
+                <div class="flex items-start">
+                    <div class="bg-primary/10 text-primary rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mt-0.5 mr-3 flex-shrink-0">3</div>
+                    <p class="text-sm text-gray-700">请妥善保管，如有遗失请及时联系发证机构补办</p>
+                </div>
+                
+                <div class="flex items-start">
+                    <div class="bg-primary/10 text-primary rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mt-0.5 mr-3 flex-shrink-0">4</div>
+                    <p class="text-sm text-gray-700">从事食品、餐饮等行业时需随身携带以备检查</p>
+                </div>
+                
+                <div class="flex items-start">
+                    <div class="bg-primary/10 text-primary rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mt-0.5 mr-3 flex-shrink-0">5</div>
+                    <p class="text-sm text-gray-700">如健康状况发生重大变化，请及时重新体检</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-4 text-center text-xs">
+        <p>© 2025 健康证联网验真平台</p>
+        <p class="text-gray-400 mt-1">由国家卫生健康委员会提供技术支持</p>
+    </footer>
+
+    <script>
+        // 移动端菜单（占位功能）
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            alert('菜单功能开发中');
+        });
+    </script>
+</body>
+</html>
